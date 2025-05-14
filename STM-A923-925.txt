@@ -41,8 +41,8 @@
     "chan_FSK":       { "enable": false }
   },
   "gateway_conf": {
-    "gateway_ID": "AA01010101010111",
-    "server_address": "mootunlesyslab.as1.cloud.thethings.industries",
+    "gateway_ID": "██████████████", /*You Can get gateway_ID From TTN */
+    "server_address": "██████████████████████████████████████████",   /*You Can get server_address From TTN */
     "serv_port_up": 1700,
     "serv_port_down": 1700,
     "keepalive_interval": 10,
