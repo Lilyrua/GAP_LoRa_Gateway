@@ -1,0 +1,10 @@
+[Unit]
+Description=Turn on LED when boot pi successfully
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/gpioset --mode=wait gpiochip0 22=1  (เปลี่ยนได้ถ้าคุณใช้ GPIO อื่น)
+Type=exec
+
+[Install]
+WantedBy=multi-user.target

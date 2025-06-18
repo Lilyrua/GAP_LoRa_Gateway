@@ -1,0 +1,18 @@
+[Unit]
+Description=LoRa Packet Forwarder Service
+After=network-online.target wifi-connect.service
+Requires=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 5
+ExecStartPre=/home/<username your pi>/sx1302_hal/packet_forwarder/reset_lgw.sh start
+ExecStart=/home/<username your pi>/sx1302_hal/packet_forwarder/lora_pkt_fwd -c /home/<username your pi>/sx1302_hal/packet_forwarder/global_conf.json.sx1250.US915
+WorkingDirectory=/home/<username your pi>/sx1302_hal/packet_forwarder/
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

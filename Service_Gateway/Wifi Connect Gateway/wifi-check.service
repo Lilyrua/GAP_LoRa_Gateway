@@ -1,0 +1,12 @@
+[Unit]
+Description=WiFi Auto Connect & Hotspot Fallback
+After=network.target NetworkManager.service
+
+[Service]
+ExecStart=/home/<username your pi>/Documents/wifi-config/wifi-check-connect.sh
+Restart=on-failure
+RestartSec=10
+User=<username your pi>
+
+[Install]
+WantedBy=multi-user.target
